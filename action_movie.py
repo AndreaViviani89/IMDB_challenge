@@ -31,19 +31,6 @@ st.header("Best Actor in Action Movies")
 st.bar_chart(df["Stars"].value_counts().nlargest(10))
 
 
-# fig, ax = plt.subplots()
-# df.hist(
-#     bins=8,
-#     column="Rating",
-#     grid=False,
-#     figsize=(8, 8),
-#     color="#86bf91",
-#     zorder=2,
-#     rwidth=0.9,
-#     ax=ax,
-#   )
-# st.write(fig)
-
 
 st.write("line chart")
 st.line_chart(df[["Title"]])
@@ -52,3 +39,17 @@ st.write("area chart")
 st.area_chart(df["Rating"])
 
 
+
+
+fig, ax = plt.subplots()
+df.hist(
+    bins=8,
+    column="Rating",
+    grid=False,
+    figsize=(8, 8),
+    color="#86bf91",
+    zorder=2,
+    rwidth=0.9,
+    ax=ax,
+  )
+st.write(fig)
